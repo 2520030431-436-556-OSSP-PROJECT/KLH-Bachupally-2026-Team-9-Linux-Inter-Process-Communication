@@ -1,4 +1,4 @@
-**#Linux Inter-Process Communication Using Pipes and FIFOs**
+PROJECT TITLE: **Linux Inter-Process Communication Using Pipes and FIFOs**
 
 OSSP Project
 Team Member Ids:
