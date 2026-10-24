@@ -37,3 +37,35 @@ Project Initiation and Planning: The project is currently in its initial phase. 
 2. Abstract prepared.
 3. Programming language and platform identified (C on Linux).
 4. Basic project objectives defined.
+----
+5. Complete C implementation prepared in a single source file, `ipc_project.c`.
+6. Sample log messages integrated into the program, eliminating the need for an external `sample.log` file.
+7. Anonymous pipe communication implemented between the collector and filter processes.
+8. Named FIFO communication implemented between the filter and analyzer processes.
+9. Process creation, synchronization, and termination implemented using Linux system calls.
+10. POSIX worker threads and mutex synchronization integrated into the analyzer.
+11. Page-fault measurements and output report generation incorporated into the program.
+12. Linux commands identified for observing process hierarchy, scheduling information, and thread activity.
+
+**Updated Project Status:**
+
+The project implementation has been prepared in C for Linux. The program integrates anonymous pipes and named FIFOs into a single log-processing workflow. It generates sample messages internally, filters valid and invalid records, analyzes accepted records using worker threads, and generates output files containing processed records and statistics.
+
+The remaining work includes compiling and testing the implementation in the team's Linux or Ubuntu/WSL2 environment, verifying the generated outputs, demonstrating the actual Linux process scheduling, and preparing for the project review.
+
+**Updated Execution Instructions:**
+
+1. Open the Linux terminal in the directory containing `ipc_project.c`.
+2. Compile the program using GCC:
+
+   `gcc -Wall -Wextra -Wpedantic -pthread ipc_project.c -o ipc_project`
+
+3. Execute the program:
+
+   `./ipc_project`
+
+4. Observe the collector, filter, and analyzer processes and the communication through the anonymous pipe and named FIFO.
+5. Verify the generated files in the `output` directory: `processed.log` and `report.txt`.
+6. Use Linux commands such as `ps`, `pstree`, `chrt`, and `top` to inspect process hierarchy, scheduling information, and thread activity.
+
+The complete implementation uses a single C source file. An external sample log file, Makefile, additional C source files, and separate executables for individual process roles are not required.
